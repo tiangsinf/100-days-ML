@@ -1,0 +1,30 @@
+---
+title: 'Day-0: 10 Oct, 2018'
+author: "tiangsinf"
+output: 
+  html_document: 
+    keep_md: yes
+---
+## Probability Distribution
+What is the probability that I will pick a car with 4 carburetors, `mtcars$carb`?
+$$P = $$
+```{r}
+prob <- table(mtcars$carb) / nrow(mtcars)
+prob
+```
+
+Instead of making a bar chart of the frequencies, we can make a bar chart of the
+probabilities. This is called a **probability mass function (PMF)**.
+```{r}
+library(tidyverse)
+library(ggplot2)
+
+prob_tbl <- as.data.frame(prob) %>%
+  rename(carb = Var1, prob = Freq)
+
+# Probability Mass Function (PMF)
+ggplot(prob_tbl, aes(x = carb, y = prob)) + 
+  geom_histogram(stat = "identity")
+```
+
+PMF depends on the number of bins for descrete variables to make sense. For continuous variable, **probability density function (PDF)** is used.
