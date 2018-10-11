@@ -15,10 +15,11 @@
 $$P(E)*P(H|E) = P(H)*P(E|H)$$
 
 **What I think:**
+Everyone is talking about Bayesian stats and I finally know how it works, eventhough the working of Bayesian stats is a bit counter intuitive to me.
 
 **What I have done:**
 Link to D0 work:
-https://github.com/tiangsinf/100-days-ML/blob/master/Day-0_10.10.18.md
+https://github.com/tiangsinf/100-days-ML/blob/master/Day-1_11.10.18.md
 
 **What I want to do for tomorrow**
 
