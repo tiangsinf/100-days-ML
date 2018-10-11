@@ -23,7 +23,8 @@ Link to D-1 work:
 https://github.com/tiangsinf/100-days-ML/blob/master/Day-1_11.10.18.md
 
 **What I want to do for tomorrow**
-
+1.  Learn Bayes (the maths way!)
+2.  GADP top-tier prediction with nn
 __________________________________________________________________
 
 ### Day-0: Oct-10, 18
