@@ -11,14 +11,15 @@
     * Categorical / categorical - proportions table & masaic plot
     * Continuous / continuous - converance, correlation
 5.  Refresher of basic probability
-6.  Bayer's Theorem
+6.  Bayer's Theorem / Bayes Inference
 $$P(E)*P(H|E) = P(H)*P(E|H)$$
+7.  NHST
 
 **What I think:**
 Everyone is talking about Bayesian stats and I finally know how it works, eventhough the working of Bayesian stats is a bit counter intuitive to me.
 
 **What I have done:**
-Link to D0 work:
+Link to D-1 work:
 https://github.com/tiangsinf/100-days-ML/blob/master/Day-1_11.10.18.md
 
 **What I want to do for tomorrow**
@@ -34,7 +35,7 @@ __________________________________________________________________
 I like how i started to understand degree on freedom, *N-1* came about! I have always wanted to know when sample sd needs to be divided by *N-1* instead of *N*.
 
 **What I have done:**
-Link to D0 work:
+Link to D-0 work:
 https://github.com/tiangsinf/100-days-ML/blob/master/Day-0_10.10.18.md
 
 **What I want to do for tomorrow**
