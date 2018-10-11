@@ -1,0 +1,32 @@
+---
+title: "Day-1: 11 Oct, 2018"
+author: "tiangsinf"
+output: 
+  html_document: 
+    keep_md: yes
+---
+## Probability Density Function (PDF)
+$$\int_{a}^{b}f(x)dx$$
+For any given point, i.e. probabily of x = 1.13 is 0 because in x, a continuous random can have infintely small lntervals. Thus, we define probabilty for a continuous random variable by giving it a range.
+Example, what is the probability of mpg, x between (20 < x < 25) 
+```{r}
+# what is the probability of mpg, x between (20 < x < 25) 
+mpg_density <- density(mtcars$mpg)
+pdf <- approxfun(mpg_density$x, mpg_density$y)
+integrate(pdf, 10, 25) # 0.25 or 25%
+
+# plotting areas under curve
+ggplot(mtcars, aes(x = mpg),  xlim = c(0, 50)) + 
+  geom_density(fill = "grey", 
+               alpha = 0.5) +
+  stat_function(fun = pdf, 
+                xlim = c(20, 25), # shade auc
+                geom = "area",
+                fill = "red",
+                alpha = 0.3) + # set transparency
+  xlim(c(5, 40))
+```
+
+```{r}
+```
+
