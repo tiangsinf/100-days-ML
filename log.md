@@ -2,6 +2,30 @@
 
 ### Day-0: Oct-10, 18
 **What I've learned:**
+1.  Calculus for PDF (https://www.youtube.com/watch?v=QKA4HNEw3aY)
+2.  Plot auc
+3.  Spearman's rho & Kendall's tau <- test correlation between 2 non lineary correlated variables
+4.  Illustration relationship between
+    
+    * Categorical / continuous - by functions (`~`) & boxplot
+    * Categorical / categorical - proportions table & masaic plot
+    * Continuous / continuous - converance, correlation
+5.  Refresher of basic probability
+6.  Bayer's Theorem
+$$P(E)*P(H|E) = P(H)*P(E|H)$$
+
+**What I think:**
+
+**What I have done:**
+Link to D0 work:
+https://github.com/tiangsinf/100-days-ML/blob/master/Day-0_10.10.18.md
+
+**What I want to do for tomorrow**
+
+__________________________________________________________________
+
+### Day-0: Oct-10, 18
+**What I've learned:**
 1.  PMF (for descrete variables), PDF (for continuous variables)
 2.  Refresher on basic statistics (spread, population vs sample central tendency)
 

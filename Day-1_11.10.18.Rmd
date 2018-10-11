@@ -16,6 +16,7 @@ pdf <- approxfun(mpg_density$x, mpg_density$y)
 integrate(pdf, 10, 25) # 0.25 or 25%
 
 # plotting areas under curve
+library(ggplot2)
 ggplot(mtcars, aes(x = mpg),  xlim = c(0, 50)) + 
   geom_density(fill = "grey", 
                alpha = 0.5) +
@@ -27,6 +28,12 @@ ggplot(mtcars, aes(x = mpg),  xlim = c(0, 50)) +
   xlim(c(5, 40))
 ```
 
+## Relationship Between Variables
+### Visualising relationship 2 categorical / continuous variables
 ```{r}
+ggplot(mpg, aes(x = hwy, 
+                fill = manufacturer)) +
+  geom_density(colour = "grey",
+               alpha = 0.5)
 ```
 
