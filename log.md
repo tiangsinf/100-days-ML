@@ -1,17 +1,34 @@
 # 100 days of ML Challenge!
 
+### Day-3: Oct-13, 18
+**What I've learned:**
+Multiple linear regression
+
+**What I think:**
+big blunder on analyzing graph :(
+
+**What I have done:**
+Link to D-3 work: 
+https://github.com/tiangsinf/100-days-ML/blob/master/Day-3_13.10.18.md
+
+
+**What I want to do for tomorrow**
+
+__________________________________________________________________
+
 ### Day-2: Oct-12, 18
 **What I've learned:**
 indepth R markdown.
 ggvis - attempted on linear model
-linear model
+simple linear model (SST = SSR(explained) + SSE(unexplained))
 
 **What I think:**
 Gained new insight into linear regression. 
 Apparently `ggvis` cannot be shown properly in .md format and knitted size for html output is big. Not really neccessary if you are not doing interactive visualisation. That bing said, I will still do a few more days of visualisation using `ggvis` just to get familiar with it.
 
 **What I have done:**
-Link to D-2 work: https://github.com/tiangsinf/100-days-ML/blob/master/Day-2_12.10.18.md
+Link to D-2 work: 
+https://github.com/tiangsinf/100-days-ML/blob/master/Day-2_12.10.18.md
 
 
 **What I want to do for tomorrow**

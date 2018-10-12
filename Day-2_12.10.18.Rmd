@@ -12,19 +12,21 @@ library(ggvis)
 ```
 
 
-```{r, linear model}
-y = lm(wt ~ mpg, mtcars) # deriving a linear regression
+```{r, linear model, warning = FALSE}
+y = lm(mpg ~ wt, mtcars) # deriving a linear regression
 summary(y)
 
 # plot a linear regression using ggvis
 mtcars %>%
-  ggvis(~mpg, ~wt) %>%
+  ggvis(~wt, ~mpg) %>%
   layer_points() %>%
   layer_model_predictions(model = "lm", se = TRUE)
   
-# just line
+# Alternative render with ggplot
 mtcars %>%
-  compute_model_prediction(wt~mpg, model = "lm") %>% 
-  ggvis(~pred_, ~resp_) %>% 
-  layer_lines()
+  ggplot(aes(x = wt, y = mpg)) +
+  geom_point() +
+  geom_smooth(method = "lm", fullrange = TRUE) +
+  xlim(0, 5.5)
 ```
+

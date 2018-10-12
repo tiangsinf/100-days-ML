@@ -1,0 +1,87 @@
+---
+title: 'Day-3: 13 Oct, 18'
+author: "tiangsinf"
+date: "10/13/2018"
+output: 
+  html_document:
+    keep_md: yes
+---
+### Multiple Linear Regression
+```{r, clear workspace, echo = FALSE, eval = FALSE}
+rm(list = ls()) # clear workspace
+```
+
+```{r, load packages, message = FALSE}
+library(tidyverse)
+library(ggvis)
+```
+
+```{r, simple linear}
+# simple linear model from day-2.
+simple_linear <- lm(mpg ~ wt, mtcars)
+summary(simple_linear)
+```
+*p-value* for `wt` is very close to 0 indicating strong predicting power on `mpg`.
+
+```{r, multiple l.regression}
+# Multiple linear regression
+str(mtcars)
+
+# Define formula
+f3 <- as.formula(paste(
+  "mpg ~ ",
+  paste(
+    names(mtcars[c(2, 3, 6)]),
+    collapse = " + "
+  )
+))
+
+# Set regression
+m_regression <- lm(formula = f3,
+                   data = mtcars)
+summary(m_regression)
+```
+#### P-Value
+We can see that `disp` has *p-value* of 0.53 which is way more than the desire (below) 0.05. We can safely conclude that `disp` has no predictive power on `mpg`.
+
+#### R-Square (R2)
+Compared to the **adjusted R2** from simple linear, the difference between R2 and adjusted R2 is bigger in the muliple regression model. This is because the adjusted R2 penalise excessive use of variables.
+
+#### F-Statistics
+The *F-stats* is another guideline to example varialbe significants. Looking at the multiple regression model, the F-stats (46.42) is significantly lower than the simple linear regression F-stats (91.38). Given (if) the overall p-value is still < 0.05, we can assumpt that our new model have lower predictive power because of lower F-stats.
+
+```{r}
+# Define formula
+f2 <- as.formula(paste(
+  "mpg ~ ",
+  paste(
+    names(mtcars[c(2, 6)]),
+    collapse = " + "
+  )
+))
+
+# Set regression
+m_regression <- lm(formula = f2,
+                   data = mtcars)
+summary(m_regression)
+```
+Dropping disp from the model improves predictive power of the model. The difference between adjusted-R2 and R2 is narrower and the p-value is even smaller!
+
+### Regression Assumptions:
+1.  Linearity
+2.  No endogeneity (https://en.wikipedia.org/wiki/Endogeneity_(econometrics) (London house price vs size example)
+3.  Normality and homoscedacity (https://en.wikipedia.org/wiki/Homoscedasticity)
+4.  No autocolleration (use Durbin-Watson test)
+    Result of DW test falls between 0 and 4 where:
+    * 2 indicates no autocorrelation
+    * <1 and >3 cause an alarm
+```{r, message = FALSE}
+library(lmtest)
+```
+    
+```{r}
+dwtest(m_regression) # dw result is 1.67
+```
+5.  No multicolinearity
+
+
