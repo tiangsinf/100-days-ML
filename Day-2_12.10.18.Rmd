@@ -1,0 +1,30 @@
+---
+title: 'Day-2: 12 Oct, 2018'
+author: "tiangsinf"
+date: "10/12/2018"
+output: 
+  html_document:
+    keep_md: yes
+---
+```{r, message=FALSE}
+library(tidyverse)
+library(ggvis)
+```
+
+
+```{r, linear model}
+y = lm(wt ~ mpg, mtcars) # deriving a linear regression
+summary(y)
+
+# plot a linear regression using ggvis
+mtcars %>%
+  ggvis(~mpg, ~wt) %>%
+  layer_points() %>%
+  layer_model_predictions(model = "lm", se = TRUE)
+  
+# just line
+mtcars %>%
+  compute_model_prediction(wt~mpg, model = "lm") %>% 
+  ggvis(~pred_, ~resp_) %>% 
+  layer_lines()
+```

@@ -1,6 +1,24 @@
 # 100 days of ML Challenge!
 
-### Day-0: Oct-10, 18
+### Day-2: Oct-12, 18
+**What I've learned:**
+indepth R markdown.
+ggvis - attempted on linear model
+linear model
+
+**What I think:**
+Gained new insight into linear regression. 
+
+**What I have done:**
+Link to D-2 work:
+
+
+**What I want to do for tomorrow**
+figure out how to extend linear line to intercept with y axis.
+apart from `lm`, also learn about `glm`, ` rlm` and `loess`.
+__________________________________________________________________
+
+### Day-1: Oct-11, 18
 **What I've learned:**
 1.  Calculus for PDF (https://www.youtube.com/watch?v=QKA4HNEw3aY)
 2.  Plot auc
