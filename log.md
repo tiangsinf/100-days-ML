@@ -8,9 +8,10 @@ linear model
 
 **What I think:**
 Gained new insight into linear regression. 
+Apparently `ggvis` cannot be shown properly in .md format and knitted size for html output is big. Not really neccessary if you are not doing interactive visualisation. That bing said, I will still do a few more days of visualisation using `ggvis` just to get familiar with it.
 
 **What I have done:**
-Link to D-2 work:
+Link to D-2 work: https://github.com/tiangsinf/100-days-ML/blob/master/Day-2_12.10.18.md
 
 
 **What I want to do for tomorrow**

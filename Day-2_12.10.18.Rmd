@@ -3,7 +3,7 @@ title: 'Day-2: 12 Oct, 2018'
 author: "tiangsinf"
 date: "10/12/2018"
 output: 
-  html_document:
+  html_document: 
     keep_md: yes
 ---
 ```{r, message=FALSE}
