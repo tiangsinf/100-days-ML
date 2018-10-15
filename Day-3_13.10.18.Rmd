@@ -85,3 +85,4 @@ dwtest(m_regression) # dw result is 1.67
 5.  No multicolinearity
 
 
+

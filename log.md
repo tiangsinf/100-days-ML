@@ -5,7 +5,8 @@
 Multiple linear regression
 
 **What I think:**
-big blunder on analyzing graph :(
+big blunder on analyzing graph :(. I was wondering why the value of intercept from `lm` function return 1 value but the graph shows other value. Reason being the starting point of x-axis wasn't 0. I spent almost a day just to figure this out. Moral of the story, always be mindful of the starting point of x & y axis.
+
 
 **What I have done:**
 Link to D-3 work: 
@@ -13,7 +14,8 @@ https://github.com/tiangsinf/100-days-ML/blob/master/Day-3_13.10.18.md
 
 
 **What I want to do for tomorrow**
-
+learn about `glm`, ` rlm` and `loess`.
+Logistic regression
 __________________________________________________________________
 
 ### Day-2: Oct-12, 18
