@@ -1,5 +1,20 @@
 # 100 days of ML Challenge!
 
+### Day-6: Oct-16, 18
+**What I've learned:**
+ROC (receiver operating characteristic) curve and used ROC in model.
+
+**What I think:**
+Fell like going back to math a little. Will be doing some refresher on calculus for tomorrow!
+
+**What I have done:**
+Link to D-6 (failed) work:
+https://github.com/tiangsinf/100-days-ML/blob/master/Day-6_16.10.18.md
+
+**What I want to do for tomorrow**
+Starting of refreshing my calculus.
+__________________________________________________________________
+
 ### Day-5: Oct-15, 18
 **What I've learned:**
 Learned the `family` argument is `glm()`. It consist of `"gaussian"` for linear regression, `"binomial"` for logistic and `"poison"` for poisson distribution.

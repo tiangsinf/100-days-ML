@@ -1,0 +1,82 @@
+---
+title: 'Day-6: 16 Oct, 18'
+author: "tiangsinf"
+output: 
+  html_document:
+    keep_md: yes
+---
+```{r, clear workspace, echo = FALSE, eval = FALSE}
+rm(list = ls()) # clear workspace
+```
+
+```{r, load packages, message = FALSE}
+library(tidyverse)
+library(ggvis)
+library(grid)
+library(gridExtra)
+library(pROC)
+
+data("Default", package = "ISLR")
+```
+
+```{r}
+str(Default)
+default <- Default
+ggvis(x = ~balance, fill = ~default, default) %>%
+  group_by(default) %>%
+  layer_densities(stroke := "white")
+# people that have higer balance tend to default
+
+ggvis(x = ~income, fill = ~default, default) %>%
+  group_by(default) %>%
+  layer_densities(stroke := "white")
+# income is pretty close between the default and non-default group. Might not be particularly useful.
+```
+
+```{r}
+# model and test data split
+sample_index <- sample(nrow(default), round(0.85 * nrow(default), 0))
+train <- default[sample_index, ]
+test <- default[-sample_index, ]
+```
+
+```{r}
+x <- names(default[-c(1, 4)])
+formula <- as.formula(
+  paste(
+    "default ~",
+    paste(
+      x, collapse = " + "
+    )
+  )
+)
+```
+
+```{r}
+# buiding glm model, family = binomial(link = logit)
+m_glm_train <- glm(formula, family = binomial(link = logit), data = train)
+
+p_glm_train <- predict(m_glm_train, type = "response")
+# if probability > 0.5, set to "Yes", else, "No"
+p_glm_train_mod <- if_else(p_glm_train > 0.5, "Yes", "No") 
+
+# confusion matrix on training set
+caret::confusionMatrix(data = as.factor(p_glm_train_mod), reference = train$default, positive = "Yes") # 97.35%
+```
+
+```{r}
+# fit on testing set
+p_glm_test <- predict(m_glm_train, newdata = test, type ="response")
+p_glm_test_mod <- if_else(p_glm_test > 0.5, "Yes", "No")
+
+# confusion matrix on test set
+caret::confusionMatrix(data = as.factor(p_glm_test_mod), reference = test$default, positive = "Yes") #97.13
+```
+
+I chose the value 0.5 as a threshhold for classification but wasn't sure if it is the “optimal” value for accuracy. In reality, other cutoff values may be better.
+
+The ROC curve (receiver operating characteristic curve) illustrates the sensitivity and specificity for all possible cutoff values. We can use the `roc()` function from the pROC package to generate the ROC curve for our predictions.
+```{r}
+roc(test$default ~ p_glm_test, plot = TRUE, print.auc = TRUE)
+```
+
