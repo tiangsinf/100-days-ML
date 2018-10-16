@@ -1,5 +1,20 @@
 # 100 days of ML Challenge!
 
+### Day-5: Oct-15, 18
+**What I've learned:**
+Learned the `family` argument is `glm()`. It consist of `"gaussian"` for linear regression, `"binomial"` for logistic and `"poison"` for poisson distribution.
+Learned the `type` in the `predict()` arguments.
+
+**What I think:**
+Skipped day 4 because of family trip to Genting.. 
+
+**What I have done:**
+Link to D-5 (failed) work: 
+
+**What I want to do for tomorrow**
+Another try for logistic regression
+__________________________________________________________________
+
 ### Day-3: Oct-13, 18
 **What I've learned:**
 Multiple linear regression
