@@ -9,7 +9,8 @@ Learned the `type` in the `predict()` arguments.
 Skipped day 4 because of family trip to Genting.. 
 
 **What I have done:**
-Link to D-5 (failed) work: 
+Link to D-5 (failed) work:
+https://github.com/tiangsinf/100-days-ML/blob/master/Day-5_15.10.18.md
 
 **What I want to do for tomorrow**
 Another try for logistic regression
